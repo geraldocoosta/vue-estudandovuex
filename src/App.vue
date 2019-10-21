@@ -1,32 +1,61 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <h1>Exercícios Vuex</h1>
+    <div class="linha">
+      <Parametros />
+      <Loja />
     </div>
-    <router-view />
+    <div class="linha">
+      <Carrinho />
+      <Resumo />
+    </div>
   </div>
 </template>
 
+<script>
+import Parametros from "./components/Parametros";
+import Loja from "./components/Loja";
+import Carrinho from "./components/Carrinho";
+import Resumo from "./components/Resumo";
+
+export default {
+  name: "app",
+  components: { Parametros, Loja, Carrinho, Resumo }
+};
+</script>
+
 <style>
+* {
+  font-family: "Oswald", sans-serif;
+}
+
+body {
+  font-size: 2rem;
+  background: linear-gradient(to right, rgb(0, 0, 0), rgb(67, 67, 67));
+}
+
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #fff;
 }
 
-#nav {
-  padding: 30px;
+h1 {
+  font-weight: 200;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.linha {
+  display: flex;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+button {
+  font-size: 1.8rem;
+  padding: 5px 15px;
+  border-radius: 5px;
+  color: #222;
+  background-color: #fafafa;
+  outline: none;
+  border: none;
 }
 </style>
