@@ -3,7 +3,10 @@
     <div class="loja">
       <span>Adicionar</span>
       <input type="number" v-model.number="quantidade" />
-      <span>itens de <strong>R$</strong></span>
+      <span>
+        itens de
+        <strong>R$</strong>
+      </span>
       <input type="number" v-model.number="preco" />
       <button @click="adicionar">Agora!</button>
     </div>
@@ -28,8 +31,7 @@ export default {
         preco: this.preco
       };
       this.sequencia++;
-      // eslint-disable-next-line
-            console.log(produto)
+      this.$store.state.produtos.push(produto);
     }
   }
 };
