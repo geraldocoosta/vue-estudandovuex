@@ -29,6 +29,11 @@ export default {
     // methods, já os getters e o state ficam no
     // computed
     ...mapActions(["adicionarProduto"]),
+    // por baixo dos panos, o vuex cria a funação abaixo
+    // quando usamos o destructuring
+    // adicionarProduto(produto){
+    //   this.$store.dispatch('adicionarProduto', produto);
+    // },
     adicionar() {
       const produto = {
         id: this.sequencia,
