@@ -5,7 +5,9 @@ vue.use(vuex);
 
 export default new vuex.Store({
   state: {
-    produtos: []
+    produtos: [],
+    quantidade: 2,
+    preco: 19.99
   },
   getters: {
     valorTotal(state) {
@@ -20,6 +22,12 @@ export default new vuex.Store({
   mutations: {
     adicionarProduto(state, payload) {
       state.produtos.push(payload);
+    },
+    setQuantidade(state, payload) {
+      state.quantidade = payload;
+    },
+    setPreco(state, payload) {
+      state.preco = payload;
     }
   },
   // obj action: colocar regras para mudar o estado central

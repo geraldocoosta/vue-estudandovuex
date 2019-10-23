@@ -2,11 +2,11 @@
   <Painel titulo="Parâmetros" vermelho>
     <div class="parametros">
       <span>
-        <strong>Quantidade Padrão: </strong>
+        <strong>Quantidade Padrão:</strong>
         <input type="number" v-model="quantidade" />
       </span>
       <span>
-        <strong>Preço Padrão: </strong>
+        <strong>Preço Padrão:</strong>
         <input type="number" v-model="preco" />
       </span>
     </div>
@@ -15,11 +15,28 @@
 
 <script>
 export default {
-  data() {
-    return {
-      quantidade: 0,
-      preco: 0
-    };
+  computed: {
+    // uma computed pode ser um objeto
+    // que tem um método get e set
+    // esse objeto é feito para realizar um v-model
+    // com o state
+    // obs.: para alterar, é melhor fazer dentro de data
+    quantidade: {
+      get() {
+        return this.$store.state.quantidade;
+      },
+      set(valor) {
+        this.$store.commit("setQuantidade", valor);
+      }
+    },
+    preco: {
+      get() {
+        return this.$store.state.preco;
+      },
+      set(valor) {
+        this.$store.commit("setPreco", valor);
+      }
+    }
   }
 };
 </script>
