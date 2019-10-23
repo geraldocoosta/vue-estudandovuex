@@ -30,7 +30,7 @@ export default {
     // computed
     ...mapActions(["adicionarProduto"]),
     // por baixo dos panos, o vuex cria a funação abaixo
-    // quando usamos o destructuring
+    // quando usamos o destructuring no mapActions
     // adicionarProduto(produto){
     //   this.$store.dispatch('adicionarProduto', produto);
     // },
