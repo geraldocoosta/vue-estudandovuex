@@ -39,6 +39,7 @@ export default {
     //   return this.$store.getters.valorTotal;
     // },
     produtos() {
+      // pegando o state do store
       return this.$store.state.produtos;
     }
   }

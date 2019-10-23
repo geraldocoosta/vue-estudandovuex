@@ -14,6 +14,7 @@
 <script>
 import { mapGetters } from "vuex";
 export default {
+  // formas de "pegar" os getters do store
   computed: mapGetters({
     total: "valorTotal"
   })

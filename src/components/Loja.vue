@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { mapMutations } from "vuex";
+import { mapActions } from "vuex";
 export default {
   data() {
     return {
@@ -24,7 +24,11 @@ export default {
     };
   },
   methods: {
-    ...mapMutations(["adicionarProduto"]),
+    // formas de "pegar" as actions no store
+    // actions e mutations ficam geralmente nos
+    // methods, já os getters e o state ficam no
+    // computed
+    ...mapActions(["adicionarProduto"]),
     adicionar() {
       const produto = {
         id: this.sequencia,
@@ -34,8 +38,13 @@ export default {
       };
       this.sequencia++;
       // this.$store.state.produtos.push(produto);
+      // -> forma de chamar uma mutation abaixo
+      // fazemos um "commit" na mutation
       // this.$store.commit("adicionarProduto", produto);
       this.adicionarProduto(produto);
+
+      // outra forma de chamar a action abaixo
+      // this.$store.dispatch("adicionarProduto", produto);
     }
   }
 };
